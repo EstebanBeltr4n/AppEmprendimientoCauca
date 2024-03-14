@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.R
 import com.example.appemprendimientocauca.R.layout
 
 class SignInActivity : AppCompatActivity() {
@@ -18,11 +19,11 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //Se nececita corregir esta parte del codigo
-        setContentView(layout.activity_sign_in)
+        setContentView(R.layout.custom_dialog)
 
-        emailEditText = findViewById(R.id.emailEditText)
-        passwordEditText = findViewById(R.id.passwordEditText)
-        signInButton = findViewById(R.id.signInButton)
+        emailEditText = findViewById(R.id.text)
+        passwordEditText = findViewById(R.id.text2)
+        signInButton = findViewById(R.id.edit_text_id)
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
