@@ -1,8 +1,6 @@
-package com.example.appemprendimientocauca.data
-
+package com.example.appemprendimientocauca.data/*
 import com.example.appemprendimientocauca.R
-//import com.example.appemprendimientocauca.data
-//import com.example.cupcake.R
+
 object DataSource {
     val flavors = listOf(
         R.string.vanilla,
@@ -17,4 +15,4 @@ object DataSource {
         Pair(R.string.six_cupcakes, 6),
         Pair(R.string.twelve_cupcakes, 12)
     )
-}
+}*/

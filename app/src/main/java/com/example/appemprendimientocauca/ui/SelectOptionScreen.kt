@@ -24,8 +24,10 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.appemprendimientocauca.R
-import com.example.cupcake.ui.components.FormattedPriceLabel
-import com.example.cupcake.ui.theme.CupcakeTheme
+
+import com.example.appemprendimientocauca.ui.components.FormattedPriceLabel
+
+import com.example.appemprendimientocauca.ui.theme.AppEmprendimientoCaucaTheme
 
 /**
  * Composable that displays the list of items as [RadioButton] options,
@@ -48,7 +50,7 @@ fun SelectOptionScreen(
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        Column(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))) {
+        Column(modifier = Modifier.padding(dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material))) {
             options.forEach { item ->
                 Row(
                     modifier = Modifier.selectable(
@@ -71,31 +73,31 @@ fun SelectOptionScreen(
                 }
             }
             Divider(
-                thickness = dimensionResource(R.dimen.thickness_divider),
-                modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
+                thickness = dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material),
+                modifier = Modifier.padding(bottom = dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material))
             )
             FormattedPriceLabel(
                 subtotal = subtotal,
                 modifier = Modifier
                     .align(Alignment.End)
                     .padding(
-                        top = dimensionResource(R.dimen.padding_medium),
-                        bottom = dimensionResource(R.dimen.padding_medium)
+                        top = dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material),
+                        bottom = dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material)
                     )
             )
         }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(dimensionResource(R.dimen.padding_medium)),
-            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+                .padding(dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material)),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(androidx.appcompat.R.dimen.abc_action_bar_default_height_material)),
             verticalAlignment = Alignment.Bottom
         ) {
             OutlinedButton(
                 modifier = Modifier.weight(1f),
                 onClick = onCancelButtonClicked
             ) {
-                Text(stringResource(R.string.cancel))
+                Text(stringResource(androidx.compose.ui.R.string.selected))
             }
             Button(
                 modifier = Modifier.weight(1f),
@@ -103,7 +105,7 @@ fun SelectOptionScreen(
                 enabled = selectedValue.isNotEmpty(),
                 onClick = onNextButtonClicked
             ) {
-                Text(stringResource(R.string.next))
+                Text(stringResource(androidx.compose.ui.R.string.selected))
             }
         }
     }
@@ -113,7 +115,7 @@ fun SelectOptionScreen(
 @Preview
 @Composable
 fun SelectOptionPreview() {
-    CupcakeTheme {
+    AppEmprendimientoCaucaTheme {
         SelectOptionScreen(
             subtotal = "299.99",
             options = listOf("Option 1", "Option 2", "Option 3", "Option 4"),
